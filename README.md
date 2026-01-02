@@ -4,7 +4,7 @@
 
 Project ini dibuat sebagai demonstrasi kemampuan pengembangan web menggunakan teknologi modern seperti React dan Vite, dengan fokus pada _User Experience_ (UX) yang halus dan desain antarmuka yang premium.
 
-![Project Preview](./preview.png)
+![Project Preview](preview.png)
 
 ## 🌟 Fitur Utama
 
