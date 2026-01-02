@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { keys, arrowKeys } from "../utils/keyboardData";
 import "../styles/keyboard.css";
 
@@ -7,6 +8,28 @@ const Keyboard = () => {
   const [history, setHistory] = useState([]);
   const [layoutType, setLayoutType] = useState("windows"); // 'windows' or 'mac'
   const [testedKeys, setTestedKeys] = useState(new Set());
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Base width of the full 104-key layout including padding roughly 1200-1300px
+      const baseWidth = 1250;
+      const padding = 40;
+      const availableWidth = window.innerWidth - padding;
+
+      let newScale = 1;
+      if (availableWidth < baseWidth) {
+        newScale = availableWidth / baseWidth;
+      }
+      // Cap max scale? nah 1 is fine.
+      setScale(newScale);
+    };
+
+    handleResize(); // Init
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -41,7 +64,7 @@ const Keyboard = () => {
   };
 
   return (
-    <div className="keyboard-container">
+    <div className="keyboard-container" ref={containerRef}>
       <div className="controls">
         <div className="layout-toggle">
           <button
@@ -82,7 +105,13 @@ const Keyboard = () => {
         </button>
       </div>
 
-      <div className="keyboard-frame">
+      <div
+        className="keyboard-frame"
+        style={{
+          transform: `scale(${scale})`,
+          marginBottom: `-${(1 - scale) * 400}px`, // Compensate for scale white space roughly
+        }}
+      >
         {keys.map((row, rowIndex) => (
           <div key={rowIndex} className="keyboard-row">
             {row.map((k) => {
