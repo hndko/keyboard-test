@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Keyboard, Zap, Monitor, Home } from "lucide-react";
-import "../styles/index.css";
+import "../styles/navbar.css";
 
 const Navbar = () => {
   const navItems = [
@@ -12,52 +12,23 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "1rem 2rem",
-        backgroundColor: "rgba(19, 19, 31, 0.8)",
-        backdropFilter: "blur(10px)",
-        borderBottom: "1px solid var(--border-color)",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}
-    >
-      <div
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          color: "var(--accent-cyan)",
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
-        }}
-      >
+    <nav className="navbar">
+      <div className="nav-brand">
         <Keyboard />
         <span>
           KeyTest<span style={{ color: "#fff" }}>.io</span>
         </span>
       </div>
 
-      <div style={{ display: "flex", gap: "2rem" }}>
+      <div className="nav-links">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
-            style={({ isActive }) => ({
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              color: isActive ? "var(--accent-cyan)" : "var(--text-secondary)",
-              fontWeight: isActive ? 600 : 500,
-              transition: "color 0.2s ease",
-            })}
+            className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
           >
             {item.icon}
-            {item.label}
+            <span>{item.label}</span>
           </NavLink>
         ))}
       </div>
