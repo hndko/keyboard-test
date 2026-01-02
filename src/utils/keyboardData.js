@@ -1,5 +1,5 @@
 export const keys = [
-  // Row 1 (Function Keys)
+  // Row 1: Function Row (Esc + F1-F12 + Delete)
   [
     { code: "Escape", label: "Esc", width: 1 },
     { code: "F1", label: "F1", width: 1 },
@@ -14,10 +14,10 @@ export const keys = [
     { code: "F10", label: "F10", width: 1 },
     { code: "F11", label: "F11", width: 1 },
     { code: "F12", label: "F12", width: 1 },
-    { code: "Delete", label: "Del", width: 1.5, align: "right" },
-    // Add PrtSc, Scroll, Pause if needed, but laptop layouts vary.
+    { code: "PrintScreen", label: "PrtSc", width: 1 },
+    { code: "Delete", label: "Del", width: 1 },
   ],
-  // Row 2 (Numbers)
+  // Row 2: Numbers + Backspace + Home
   [
     { code: "Backquote", label: "`", labelShift: "~", width: 1 },
     { code: "Digit1", label: "1", labelShift: "!", width: 1 },
@@ -33,8 +33,9 @@ export const keys = [
     { code: "Minus", label: "-", labelShift: "_", width: 1 },
     { code: "Equal", label: "=", labelShift: "+", width: 1 },
     { code: "Backspace", label: "Backspace", width: 2, align: "right" },
+    { code: "Home", label: "Home", width: 1 },
   ],
-  // Row 3 (QWERTY)
+  // Row 3: Tab + QWERTY + Pipe + End
   [
     { code: "Tab", label: "Tab", width: 1.5 },
     { code: "KeyQ", label: "Q", width: 1 },
@@ -50,10 +51,11 @@ export const keys = [
     { code: "BracketLeft", label: "[", labelShift: "{", width: 1 },
     { code: "BracketRight", label: "]", labelShift: "}", width: 1 },
     { code: "Backslash", label: "\\", labelShift: "|", width: 1.5 },
+    { code: "End", label: "End", width: 1 },
   ],
-  // Row 4 (ASDF)
+  // Row 4: Caps + ASDF + Enter + PgUp
   [
-    { code: "CapsLock", label: "Caps Lock", width: 1.75 },
+    { code: "CapsLock", label: "Caps", width: 1.75 },
     { code: "KeyA", label: "A", width: 1 },
     { code: "KeyS", label: "S", width: 1 },
     { code: "KeyD", label: "D", width: 1 },
@@ -65,9 +67,10 @@ export const keys = [
     { code: "KeyL", label: "L", width: 1 },
     { code: "Semicolon", label: ";", labelShift: ":", width: 1 },
     { code: "Quote", label: "'", labelShift: '"', width: 1 },
-    { code: "Enter", label: "Enter", width: 2.25, align: "right" },
+    { code: "Enter", label: "Enter", width: 2.25 },
+    { code: "PageUp", label: "PgUp", width: 1 },
   ],
-  // Row 5 (ZXCV)
+  // Row 5: Shift + ZXCV + Arrow Up + PgDn
   [
     { code: "ShiftLeft", label: "Shift", width: 2.25 },
     { code: "KeyZ", label: "Z", width: 1 },
@@ -80,24 +83,24 @@ export const keys = [
     { code: "Comma", label: ",", labelShift: "<", width: 1 },
     { code: "Period", label: ".", labelShift: ">", width: 1 },
     { code: "Slash", label: "/", labelShift: "?", width: 1 },
-    { code: "ShiftRight", label: "Shift", width: 2.75, align: "right" },
+    { code: "ShiftRight", label: "Shift", width: 1.75 },
+    { code: "ArrowUp", label: "↑", width: 1 },
+    { code: "PageDown", label: "PgDn", width: 1 },
   ],
-  // Row 6 (Mods)
+  // Row 6: Mods + Space + Arrows (Left/Down/Right)
   [
     { code: "ControlLeft", label: "Ctrl", width: 1.25 },
     { code: "MetaLeft", label: "Win", labelMac: "Cmd", width: 1.25 },
     { code: "AltLeft", label: "Alt", labelMac: "Opt", width: 1.25 },
     { code: "Space", label: "", width: 6.25 },
-    { code: "AltRight", label: "Alt", labelMac: "Opt", width: 1.25 },
-    { code: "MetaRight", label: "Fn", labelMac: "Cmd", width: 1.25 }, // Often Fn or Menu or Win
-    { code: "ControlRight", label: "Ctrl", width: 1.25 },
-    // Arrow keys? Usually separate.
+    { code: "AltRight", label: "Alt", labelMac: "Opt", width: 1 },
+    { code: "MetaRight", label: "Fn", labelMac: "Cmd", width: 1 },
+    { code: "ControlRight", label: "Ctrl", width: 1 },
+    { code: "ArrowLeft", label: "←", width: 1 },
+    { code: "ArrowDown", label: "↓", width: 1 },
+    { code: "ArrowRight", label: "→", width: 1 },
   ],
 ];
 
-export const arrowKeys = [
-  { code: "ArrowUp", label: "↑", width: 1 },
-  { code: "ArrowLeft", label: "←", width: 1 },
-  { code: "ArrowDown", label: "↓", width: 1 },
-  { code: "ArrowRight", label: "→", width: 1 },
-];
+// No longer needed separate arrowKeys array as they are integrated
+export const arrowKeys = [];

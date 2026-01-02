@@ -105,21 +105,6 @@ const Keyboard = () => {
         {/* Layout adjustment for arrow keys usually requires specific grid but doing a simple append for now */}
       </div>
 
-      <div className="arrow-keys-container">
-        {arrowKeys.map((k) => (
-          <div
-            key={k.code}
-            className={`key ${activeKey === k.code ? "active" : ""} ${
-              testedKeys.has(k.code) ? "tested" : ""
-            }`}
-            data-code={k.code}
-            style={{ width: "var(--base-size)" }}
-          >
-            {k.label}
-          </div>
-        ))}
-      </div>
-
       <div className="test-status">
         <h3>
           Last Key:{" "}
