@@ -1,16 +1,70 @@
-# React + Vite
+# Keyboard, Speed & LCD Tester 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sebuah suite tools modern untuk menguji performa peripheral komputer Anda.**
 
-Currently, two official plugins are available:
+Project ini dibuat sebagai demonstrasi kemampuan pengembangan web menggunakan teknologi modern seperti React dan Vite, dengan fokus pada _User Experience_ (UX) yang halus dan desain antarmuka yang premium.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Project Preview](./preview.png)
 
-## React Compiler
+## 🌟 Fitur Utama
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Keyboard Test Ultimate
 
-## Expanding the ESLint configuration
+Uji fungsionalitas setiap tombol pada keyboard Anda dengan visualisasi real-time.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Mendukung layout **Windows** dan **Mac**.
+- Deteksi akurat untuk setiap key press.
+- Visualisasi history penekanan tombol.
+
+### 2. Speed Typing Test
+
+Ukur kecepatan mengetik (WPM) dan akurasi Anda dengan antarmuka yang distraksi-free.
+
+- Kalkulasi WPM (Words Per Minute) akurat.
+- Highlight visual untuk karakter benar/salah.
+- Animasi smooth dan responsif.
+
+### 3. LCD Pixel Perfect
+
+Cek kesehatan monitor Anda dari dead pixel atau stuck pixel.
+
+- Mode layar penuh (Full Screen).
+- Siklus warna lengkap (RGB, CMY, Black, White).
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Core**: React 19, Vite
+- **Styling**: Modern Vanilla CSS (CSS Variables, Flexbox/Grid, Glassmorphism)
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
+
+## 📦 Cara Install & Menjalankan
+
+1.  **Clone repository ini**
+
+    ```bash
+    git clone https://github.com/username/keyboard-test.git
+    cd keyboard-test
+    ```
+
+2.  **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Jalankan server development**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  Buka browser dan kunjungi `http://localhost:5173`.
+
+## 👨‍💻 Tentang Pembuat
+
+Dibuat dengan ❤️ untuk komunitas developer Indonesia. Project ini menunjukkan implementasi bersih dari state management di React, penanganan DOM events untuk hardware input, dan praktik CSS modern tanpa framework CSS berat.
+
+---
+
+_Open Source Project - Silakan berkontribusi atau gunakan untuk belajar!_

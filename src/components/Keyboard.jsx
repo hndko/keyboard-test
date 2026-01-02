@@ -86,7 +86,11 @@ const Keyboard = () => {
                   className={`key ${isActive ? "active" : ""} ${
                     isTested ? "tested" : ""
                   }`}
-                  style={{ flexGrow: k.width }}
+                  style={{
+                    width: `calc(var(--base-size) * ${k.width})`,
+                    flexGrow: 0, // Stop using flex-grow to force specific ratios
+                    flexShrink: 0,
+                  }}
                   data-code={k.code}
                 >
                   <span className="key-main">{label}</span>
@@ -109,6 +113,7 @@ const Keyboard = () => {
               testedKeys.has(k.code) ? "tested" : ""
             }`}
             data-code={k.code}
+            style={{ width: "var(--base-size)" }}
           >
             {k.label}
           </div>
