@@ -1,0 +1,106 @@
+.speed-test-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.stats-board {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--accent-purple);
+  text-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
+}
+
+.text-display {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+  background: var(--bg-panel);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  min-height: 150px;
+  cursor: text;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.char {
+  position: relative;
+}
+
+.char.correct {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.char.incorrect {
+  color: #ff4444;
+  text-decoration: underline;
+}
+
+.char.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-cyan);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hidden-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.result-popup {
+  animation: slideUp 0.5s ease;
+  background: rgba(19, 19, 31, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-green);
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,75 @@
+.lcd-intro {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.lcd-card {
+  background: var(--bg-panel);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lcd-card h3 {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.lcd-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.lcd-card .instruction {
+  background: rgba(10, 255, 10, 0.1);
+  color: var(--accent-green);
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.lcd-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+}
+
+.lcd-info {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
