@@ -7,6 +7,7 @@ import SpeedPage from "./pages/SpeedPage";
 import LcdPage from "./pages/LcdPage";
 import MousePage from "./pages/MousePage";
 import GamepadPage from "./pages/GamepadPage";
+import GhostingPage from "./pages/GhostingPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/lcd" element={<LcdPage />} />
         <Route path="/mouse" element={<MousePage />} />
         <Route path="/gamepad" element={<GamepadPage />} />
+        <Route path="/ghosting" element={<GhostingPage />} />
       </Routes>
     </>
   );

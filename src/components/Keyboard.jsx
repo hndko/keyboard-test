@@ -3,7 +3,7 @@ import { keys, arrowKeys } from "../utils/keyboardData";
 import "../styles/keyboard.css";
 
 const Keyboard = () => {
-  const [activeKey, setActiveKey] = useState(null);
+  const [activeKeys, setActiveKeys] = useState(new Set()); // Changed to Set for multi-press
   const [history, setHistory] = useState([]);
   const [layoutType, setLayoutType] = useState("windows"); // 'windows' or 'mac'
   const [testedKeys, setTestedKeys] = useState(new Set());
@@ -12,7 +12,6 @@ const Keyboard = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Base width of the full 104-key layout including padding roughly 1200-1300px
       const baseWidth = 1250;
       const padding = 40;
       const availableWidth = window.innerWidth - padding;
@@ -21,11 +20,10 @@ const Keyboard = () => {
       if (availableWidth < baseWidth) {
         newScale = availableWidth / baseWidth;
       }
-      // Cap max scale? nah 1 is fine.
       setScale(newScale);
     };
 
-    handleResize(); // Init
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -34,16 +32,22 @@ const Keyboard = () => {
     const handleKeyDown = (e) => {
       e.preventDefault();
       const { code, key } = e;
-      setActiveKey(code);
+
+      setActiveKeys((prev) => new Set(prev).add(code)); // Add to active set
 
       setTestedKeys((prev) => new Set(prev).add(code));
       setHistory((prev) =>
         [...prev, { code, key, timestamp: Date.now() }].slice(-10)
-      ); // Keep last 10
+      );
     };
 
-    const handleKeyUp = () => {
-      setActiveKey(null);
+    const handleKeyUp = (e) => {
+      const { code } = e;
+      setActiveKeys((prev) => {
+        const next = new Set(prev);
+        next.delete(code);
+        return next;
+      });
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -114,7 +118,7 @@ const Keyboard = () => {
         {keys.map((row, rowIndex) => (
           <div key={rowIndex} className="keyboard-row">
             {row.map((k) => {
-              const isActive = activeKey === k.code;
+              const isActive = activeKeys.has(k.code);
               const isTested = testedKeys.has(k.code);
               let label = k.label;
               if (layoutType === "mac" && k.labelMac) {

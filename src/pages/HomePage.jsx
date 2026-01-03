@@ -40,11 +40,10 @@ const HomePage = () => {
           desc: "Drift Check & Input Test",
         },
         {
-          path: "/keyboard",
+          path: "/ghosting",
           label: "Anti-Ghosting",
           icon: <Layers size={32} />,
           desc: "N-Key Rollover Test",
-          upcoming: true,
         },
       ],
     },
