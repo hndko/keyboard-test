@@ -32,7 +32,6 @@ const HomePage = () => {
           label: "Mouse Tester",
           icon: <MousePointer2 size={32} />,
           desc: "Polling Rate & Double Click",
-          upcoming: true,
         },
         {
           path: "/gamepad",

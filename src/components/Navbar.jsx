@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Keyboard, Zap, Monitor, Home } from "lucide-react";
+import { Keyboard, Home } from "lucide-react";
 import "../styles/navbar.css";
 
 const Navbar = () => {
@@ -13,7 +13,15 @@ const Navbar = () => {
         </span>
       </NavLink>
 
-      {/* Menu items removed as per user request. Features are now on Home Page. */}
+      <div className="nav-links">
+        <NavLink
+          to="/"
+          className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
+        >
+          <Home size={20} />
+          <span>Home</span>
+        </NavLink>
+      </div>
     </nav>
   );
 };
