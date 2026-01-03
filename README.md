@@ -7,32 +7,43 @@
 **The Ultimate Peripheral Testing Suite.**
 _Input/Output Universe_ - Diagnose, benchmark, and verify all your computing gear in one premium, aesthetic interface.
 
-## ✨ Features (v1.0)
+## ✨ Features (v1.4)
 
-### ⌨️ Input Tools
+### ⌨️ Inputs
 
-- **104-Key Tester:** Full visual keyboard with History, NKRO, and Anti-Ghosting support.
-- **Mouse Tester:** Check Polling Rate (Hz), Click reliability, and Double-click detection.
-- **Gamepad Tester:** Visualize controller inputs, analog drift, and vibration.
-- **Microphone**: Real-time waveform visualizer for audio input.
-- **Webcam**: Check resolution, mirroring, and video feed availability.
+- **Keyboard:** 104-Key Visualizer, History, NKRO, Anti-Ghosting.
+- **Mouse:** Polling Rate (Hz), Click Events, Double-click Detector.
+- **Gamepad:** Controller mapping, Analog stick drift, Vibration.
+- **Touch:** Multi-touch visualizer for mobile/tablets.
 
-### 🖥️ Output Audio & Video
+### 🎥 Media & Audio
 
-- **Refresh Rate (Hz):** Real-time FPS monitor with Motion Clarity UFO test.
-- **Stereo Audio:** Left / Right channel separation and panning test.
-- **Dead Pixel Check:** Full-screen solid color cycler to spot panel defects.
+- **Microphone:** Real-time waveform & volume monitor.
+- **Webcam:** Resolution check, Mirroring, Stream test.
+- **Stereo Audio:** Left/Right channel separation test.
+- **Text-to-Speech:** Browser voice synthesis demo.
+- **Sound Sim:** Mechanical keyboard typing simulator.
+
+### 🖥️ Display
+
+- **Color Guard:** Gradient banding and 8-bit/10-bit quality test.
+- **Dead Pixel:** Fullscreen solid color cycler.
+- **LCD Test:** Standard pattern generation.
+- **Refresh Rate:** Real-time FPS & Hz monitor with UFO motion.
+
+### ⚙️ System & Sensors
+
+- **Network:** Connection type, Downlink speed, Latency (Ping).
+- **Storage:** Browser storage quota and usage estimate.
+- **Battery:** Charge level, status, and time remaining.
+- **Motion:** 3D Cube visualizer for Gyroscope & Accelerometer.
+- **Location:** GPS Coordinates, Altitude, and Accuracy.
 
 ### ⚡ Skills & Benchmarks
 
-- **Typing Speed Test:** Classic WPM and Accuracy benchmark with result tracking.
-- **Aim Trainer:** Reflex reaction game to warm up your mouse hand.
-- **Shortcut Master:** Practice essential hotkeys for VS Code and Windows.
-
-### 🛠️ Utilities
-
-- **Battery Monitor:** Diagnostic tool for power level, charging status, and rate.
-- **Mechanical Sound Sim:** Turn your membrane keyboard into a thocky beast while typing.
+- **Typing Speed:** Standard WPM & Accuracy benchmark.
+- **Aim Trainer:** Reflex reaction game.
+- **Shortcut Master:** VS Code hotkey training drill.
 
 ## 🚀 Getting Started
 
