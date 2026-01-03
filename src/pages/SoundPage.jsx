@@ -31,14 +31,16 @@ const SoundPage = () => {
         </p>
 
         <div className="control-group">
-          <label className="switch-label">
-            <input
-              type="checkbox"
-              checked={isEnabled}
-              onChange={(e) => setIsEnabled(e.target.checked)}
-            />
-            <span className="slider"></span>
-            Enable Simulator
+          <label className="switch-row">
+            <span className="switch-text">Enable Simulator</span>
+            <div className="switch-input-wrapper">
+              <input
+                type="checkbox"
+                checked={isEnabled}
+                onChange={(e) => setIsEnabled(e.target.checked)}
+              />
+              <span className="slider"></span>
+            </div>
           </label>
         </div>
 
