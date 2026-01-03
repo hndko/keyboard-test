@@ -1,31 +1,41 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
-import KeyboardPage from "./pages/KeyboardPage";
-import SpeedPage from "./pages/SpeedPage";
-import LcdPage from "./pages/LcdPage";
-import MousePage from "./pages/MousePage";
-import GamepadPage from "./pages/GamepadPage";
-import GhostingPage from "./pages/GhostingPage";
-import HzPage from "./pages/HzPage";
-import AudioPage from "./pages/AudioPage";
-import AimPage from "./pages/AimPage";
-import ShortcutPage from "./pages/ShortcutPage";
-import SoundPage from "./pages/SoundPage";
-import MicrophonePage from "./pages/MicrophonePage";
-import WebcamPage from "./pages/WebcamPage";
-import DeadPixelPage from "./pages/DeadPixelPage";
-import TypingPage from "./pages/TypingPage";
-import BatteryPage from "./pages/BatteryPage";
-import TouchPage from "./pages/TouchPage";
-import VibrationPage from "./pages/VibrationPage";
-import MotionPage from "./pages/MotionPage";
-import LocationPage from "./pages/LocationPage";
-import NetworkPage from "./pages/NetworkPage";
-import ColorPage from "./pages/ColorPage";
-import StoragePage from "./pages/StoragePage";
-import TtsPage from "./pages/TtsPage";
+
+// Inputs
+import KeyboardPage from "./pages/inputs/KeyboardPage";
+import MousePage from "./pages/inputs/MousePage";
+import GamepadPage from "./pages/inputs/GamepadPage";
+import GhostingPage from "./pages/inputs/GhostingPage";
+import SpeedPage from "./pages/inputs/SpeedPage";
+import AimPage from "./pages/inputs/AimPage";
+import ShortcutPage from "./pages/inputs/ShortcutPage";
+import TypingPage from "./pages/inputs/TypingPage";
+
+// Display
+import LcdPage from "./pages/display/LcdPage";
+import HzPage from "./pages/display/HzPage";
+import DeadPixelPage from "./pages/display/DeadPixelPage";
+import ColorPage from "./pages/display/ColorPage";
+
+// Media
+import AudioPage from "./pages/media/AudioPage";
+import MicrophonePage from "./pages/media/MicrophonePage";
+import WebcamPage from "./pages/media/WebcamPage";
+import SoundPage from "./pages/media/SoundPage";
+import TtsPage from "./pages/media/TtsPage";
+
+// System
+import BatteryPage from "./pages/system/BatteryPage";
+import NetworkPage from "./pages/system/NetworkPage";
+import StoragePage from "./pages/system/StoragePage";
+import MotionPage from "./pages/system/MotionPage";
+import LocationPage from "./pages/system/LocationPage";
+
+// Mobile
+import TouchPage from "./pages/mobile/TouchPage";
+import VibrationPage from "./pages/mobile/VibrationPage";
+
 import { SoundProvider } from "./context/SoundContext";
 
 function App() {

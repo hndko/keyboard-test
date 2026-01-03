@@ -30,81 +30,88 @@ import {
 import "../styles/index.css";
 import "../styles/home.css";
 
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import {
+  Keyboard,
+  Zap,
+  Monitor,
+  MousePointer2,
+  Gamepad2,
+  Target,
+  Headphones,
+  Layers,
+  Search,
+  Mic,
+  Camera,
+  Music,
+  Activity,
+  Maximize,
+  Battery,
+  Smartphone,
+  Fingerprint,
+  Vibrate,
+  Radar,
+  Compass,
+  MapPin,
+  Wifi,
+  Palette,
+  Database,
+  Volume2,
+  Grid,
+} from "lucide-react";
+import "../styles/index.css";
+import "../styles/home.css";
+
 const HomePage = () => {
+  const [activeTab, setActiveTab] = useState("All");
+
   const categories = [
     {
-      title: "Core Input Tools",
-      description: "Test your primary peripherals.",
+      id: "inputs",
+      title: "Inputs",
+      icon: <Keyboard size={18} />,
       tools: [
         {
           path: "/keyboard",
           label: "Keyboard Test",
           icon: <Keyboard size={32} />,
-          desc: "104-Key, NKRO & Layout Check",
+          desc: "104-Key Layout Check",
         },
         {
           path: "/mouse",
           label: "Mouse Tester",
           icon: <MousePointer2 size={32} />,
-          desc: "Polling Rate & Double Click",
+          desc: "Polling Rate & Clicks",
         },
         {
           path: "/gamepad",
-          label: "Gamepad Tester",
+          label: "Gamepad",
           icon: <Gamepad2 size={32} />,
-          desc: "Drift Check & Input Test",
+          desc: "Drift & Input Test",
         },
         {
           path: "/ghosting",
           label: "Anti-Ghosting",
           icon: <Layers size={32} />,
-          desc: "N-Key Rollover Test",
+          desc: "N-Key Rollover",
+        },
+        {
+          path: "/touch",
+          label: "Touch Screen",
+          icon: <Fingerprint size={32} />,
+          desc: "Multi-Touch Test",
         },
       ],
     },
     {
-      title: "Skill & Performance",
-      description: "Measure your reaction and speed.",
+      id: "media",
+      title: "Media",
+      icon: <Headphones size={18} />,
       tools: [
-        {
-          path: "/speed",
-          label: "Speed Test",
-          icon: <Zap size={32} />,
-          desc: "WPM & Accuracy Typing",
-        },
-        {
-          path: "/aim",
-          label: "Aim Trainer",
-          icon: <Target size={32} />,
-          desc: "Reflex & Precision Game",
-        },
-        {
-          path: "/shortcuts",
-          label: "Shortcut Master",
-          icon: <Keyboard size={32} />,
-          desc: "Learn VS Code Shortcuts",
-        },
-      ],
-    },
-    {
-      title: "Display & Audio",
-      description: "Diagnostics for screen and sound.",
-      tools: [
-        {
-          path: "/lcd",
-          label: "LCD Pixel Test",
-          icon: <Monitor size={32} />,
-          desc: "Dead Pixel Check",
-        },
-        {
-          path: "/hz",
-          label: "Refresh Rate",
-          icon: <Activity size={32} />,
-          desc: "Real Hz/FPS Monitor",
-        },
         {
           path: "/audio",
-          label: "Stereo Test",
+          label: "Stereo Audio",
           icon: <Headphones size={32} />,
           desc: "L/R Channel Check",
         },
@@ -112,61 +119,13 @@ const HomePage = () => {
           path: "/mic",
           label: "Microphone",
           icon: <Mic size={32} />,
-          desc: "Waveform Input Test",
+          desc: "Waveform Input",
         },
         {
           path: "/webcam",
           label: "Webcam",
           icon: <Camera size={32} />,
-          desc: "Video Feed & Resolution",
-        },
-      ],
-    },
-    {
-      title: "Experimental",
-      description: "Fun additions.",
-      tools: [
-        {
-          path: "/sound",
-          label: "Switch Sounds",
-          icon: <Music size={32} />,
-          desc: "Mech Keyboard Simulator",
-        },
-      ],
-    },
-    {
-      title: "Utilities",
-      description: "Useful tools for diagnosis.",
-      tools: [
-        {
-          path: "/deadpixel",
-          label: "Dead Pixel",
-          icon: <Maximize size={32} />,
-          desc: "Screen Color Cycler",
-        },
-        {
-          path: "/color",
-          label: "Color Guard",
-          icon: <Palette size={32} />,
-          desc: "Gradient Banding Test",
-        },
-        {
-          path: "/typing",
-          label: "Typing Speed",
-          icon: <Keyboard size={32} />,
-          desc: "WPM and Accuracy",
-        },
-        {
-          path: "/battery",
-          label: "Battery Info",
-          icon: <Battery size={32} />,
-          desc: "Power & Charging Status",
-        },
-        {
-          path: "/storage",
-          label: "Storage",
-          icon: <Database size={32} />,
-          desc: "Quota Usage",
+          desc: "Video Feed Check",
         },
         {
           path: "/tts",
@@ -174,51 +133,141 @@ const HomePage = () => {
           icon: <Volume2 size={32} />,
           desc: "Voice Synthesis",
         },
-      ],
-    },
-    {
-      title: "Mobile Tools",
-      description: "Touch and Haptics testing.",
-      tools: [
         {
-          path: "/touch",
-          label: "Touch Screen",
-          icon: <Fingerprint size={32} />,
-          desc: "Multi-Touch Visualizer",
-        },
-        {
-          path: "/vibration",
-          label: "Vibration",
-          icon: <Vibrate size={32} />,
-          desc: "Haptic Feedback Test",
+          path: "/sound",
+          label: "Mech Sounds",
+          icon: <Music size={32} />,
+          desc: "Switch Simulator",
         },
       ],
     },
     {
-      title: "Sensors & Network",
-      description: "Environment and connectivity.",
+      id: "display",
+      title: "Display",
+      icon: <Monitor size={18} />,
       tools: [
         {
-          path: "/motion",
-          label: "Motion",
-          icon: <Radar size={32} />,
-          desc: "Gyro & Accel Visualizer",
+          path: "/lcd",
+          label: "LCD Pixels",
+          icon: <Monitor size={32} />,
+          desc: "Dead Pixel Check",
         },
         {
-          path: "/location",
-          label: "GPS Location",
-          icon: <MapPin size={32} />,
-          desc: "Coordinates & Altitude",
+          path: "/deadpixel",
+          label: "Dead Pixel 2",
+          icon: <Maximize size={32} />,
+          desc: "Fullscreen Cycler",
+          new: true,
         },
+        {
+          path: "/color",
+          label: "Color Guard",
+          icon: <Palette size={32} />,
+          desc: "Gradient Banding",
+          new: true,
+        },
+        {
+          path: "/hz",
+          label: "Refresh Rate",
+          icon: <Activity size={32} />,
+          desc: "FPS/Hz Monitor",
+        },
+      ],
+    },
+    {
+      id: "system",
+      title: "System",
+      icon: <Activity size={18} />,
+      tools: [
         {
           path: "/network",
           label: "Network",
           icon: <Wifi size={32} />,
           desc: "Speed & Latency",
+          new: true,
+        },
+        {
+          path: "/storage",
+          label: "Storage",
+          icon: <Database size={32} />,
+          desc: "Quota Usage",
+          new: true,
+        },
+        {
+          path: "/battery",
+          label: "Battery",
+          icon: <Battery size={32} />,
+          desc: "Power Status",
+        },
+        {
+          path: "/vibration",
+          label: "Vibration",
+          icon: <Vibrate size={32} />,
+          desc: "Haptics Test",
+        },
+      ],
+    },
+    {
+      id: "sensors",
+      title: "Sensors",
+      icon: <Radar size={18} />,
+      tools: [
+        {
+          path: "/motion",
+          label: "Motion",
+          icon: <Radar size={32} />,
+          desc: "Gyro & Accel",
+          new: true,
+        },
+        {
+          path: "/location",
+          label: "GPS",
+          icon: <MapPin size={32} />,
+          desc: "Coordinates",
+          new: true,
+        },
+      ],
+    },
+    {
+      id: "skills",
+      title: "Skills",
+      icon: <Target size={18} />,
+      tools: [
+        {
+          path: "/speed",
+          label: "Speed Test",
+          icon: <Zap size={32} />,
+          desc: "Typing Benchmark",
+        },
+        {
+          path: "/typing",
+          label: "Typing 2.0",
+          icon: <Keyboard size={32} />,
+          desc: "Advanced WPM",
+          new: true,
+        },
+        {
+          path: "/aim",
+          label: "Aim Trainer",
+          icon: <Target size={32} />,
+          desc: "Reflex Game",
+        },
+        {
+          path: "/shortcuts",
+          label: "Shortcuts",
+          icon: <Search size={32} />,
+          desc: "VS Code Drill",
         },
       ],
     },
   ];
+
+  const getFilteredTools = () => {
+    if (activeTab === "All") {
+      return categories.flatMap((cat) => cat.tools);
+    }
+    return categories.find((cat) => cat.title === activeTab)?.tools || [];
+  };
 
   return (
     <div className="container">
@@ -229,32 +278,35 @@ const HomePage = () => {
         <p className="subtitle">The Ultimate Utility Suite for your Gear.</p>
       </div>
 
-      <div className="tools-grid-wrapper">
-        {categories.map((cat, index) => (
-          <div key={index} className="category-section">
-            <h2 className="category-title">{cat.title}</h2>
-            <p className="category-desc">{cat.description}</p>
-            <div className="tools-grid">
-              {cat.tools.map((tool, tIndex) => (
-                <NavLink
-                  key={tIndex}
-                  to={tool.upcoming ? "#" : tool.path}
-                  className={`card tool-card ${
-                    tool.upcoming ? "upcoming" : ""
-                  }`}
-                  onClick={(e) => tool.upcoming && e.preventDefault()}
-                >
-                  <div className="card-icon">{tool.icon}</div>
-                  <h3>{tool.label}</h3>
-                  <p>{tool.desc}</p>
-                  {tool.upcoming && (
-                    <span className="badge-upcoming">Soon</span>
-                  )}
-                </NavLink>
-              ))}
-            </div>
-          </div>
+      <div className="home-nav-tabs">
+        <button
+          className={`nav-tab ${activeTab === "All" ? "active" : ""}`}
+          onClick={() => setActiveTab("All")}
+        >
+          <Grid size={16} /> All
+        </button>
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            className={`nav-tab ${activeTab === cat.title ? "active" : ""}`}
+            onClick={() => setActiveTab(cat.title)}
+          >
+            {cat.icon} {cat.title}
+          </button>
         ))}
+      </div>
+
+      <div className="tools-grid-wrapper">
+        <div className="tools-grid">
+          {getFilteredTools().map((tool, index) => (
+            <NavLink key={index} to={tool.path} className="card tool-card">
+              <div className="card-icon">{tool.icon}</div>
+              <h3>{tool.label}</h3>
+              <p>{tool.desc}</p>
+              {tool.new && <span className="badge-new">NEW</span>}
+            </NavLink>
+          ))}
+        </div>
       </div>
     </div>
   );
