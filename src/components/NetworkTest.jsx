@@ -49,10 +49,13 @@ const NetworkTest = () => {
     const start = Date.now();
     try {
       // Fetch a small resource from a reliable CDN
-      await fetch("https://files.hndko.com/ping/pixel.txt", {
-        mode: "no-cors",
-        cache: "no-cache",
-      });
+      await fetch(
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+        {
+          mode: "no-cors",
+          cache: "no-cache",
+        }
+      );
       // Note: no-cors means we can't see the response, but the promise resolves when headers are received.
       // Better to use a timestamp endpoint if possible, but for simple latency check this works roughly.
       const end = Date.now();

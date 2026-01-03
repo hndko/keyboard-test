@@ -127,7 +127,7 @@ const Keyboard = () => {
 
               return (
                 <div
-                  key={k.code}
+                  key={k.code || `key-${rowIndex}-${k.label}-${Math.random()}`}
                   className={`key ${isActive ? "active" : ""} ${
                     isTested ? "tested" : ""
                   }`}
