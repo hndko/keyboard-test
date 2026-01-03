@@ -38,15 +38,6 @@ const WebcamTest = () => {
       };
       const s = await navigator.mediaDevices.getUserMedia(constraints);
       setStream(s);
-      if (videoRef.current) {
-        videoRef.current.srcObject = s;
-        videoRef.current.onloadedmetadata = () => {
-          setResolution({
-            w: videoRef.current.videoWidth,
-            h: videoRef.current.videoHeight,
-          });
-        };
-      }
       setIsActive(true);
     } catch (err) {
       console.error(err);
