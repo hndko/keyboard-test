@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import KeyboardPage from "./pages/KeyboardPage";
 import SpeedPage from "./pages/SpeedPage";
 import LcdPage from "./pages/LcdPage";
+import MousePage from "./pages/MousePage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/keyboard" element={<KeyboardPage />} />
           <Route path="/speed" element={<SpeedPage />} />
           <Route path="/lcd" element={<LcdPage />} />
+          <Route path="/mouse" element={<MousePage />} />
         </Routes>
       </div>
     </div>
