@@ -1,70 +1,79 @@
-# Keyboard, Speed & LCD Tester 🚀
+# ⌨️ Modern Keyboard & Peripheral Tester
 
-**Sebuah suite tools modern untuk menguji performa peripheral komputer Anda.**
+![Project Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
+![Tech Stack](https://img.shields.io/badge/Tech-React%20%7C%20Vite%20%7C%20CSS-blue?style=flat-square)
 
-Project ini dibuat sebagai demonstrasi kemampuan pengembangan web menggunakan teknologi modern seperti React dan Vite, dengan fokus pada _User Experience_ (UX) yang halus dan desain antarmuka yang premium.
+**Kumpulan alat pengujian periferal modern, estetis, dan responsif yang dibangun dengan React.**
 
-![Project Preview](preview.png)
+Project ini dirancang untuk memberikan pengalaman pengujian yang premium dan akurat bagi pengguna keyboard mekanik, penggemar mengetik, dan teknisi komputer.
 
-## 🌟 Fitur Utama
+## ✨ Fitur Unggulan
 
-### 1. Keyboard Test Ultimate
+### 1. 🎹 Full 104-Key Keyboard Tester
 
-Uji fungsionalitas setiap tombol pada keyboard Anda dengan visualisasi real-time.
+Visualisasi keyboard lengkap dengan dukungan layout standar 104 tombol.
 
-- Mendukung layout **Windows** dan **Mac**.
-- Deteksi akurat untuk setiap key press.
-- Visualisasi history penekanan tombol.
+- **Auto-scaling:** Tampilan otomatis menyesuaikan dengan lebar layar Anda—tidak ada scrollbar horizontal.
+- **Layout Lengkap:** Termasuk Numpad, Arrow Keys, dan Navigation Cluster (Insert, Home, End, dll).
+- **Indikator Visual:** Efek "glow" saat tombol ditekan dan riwayat penekanan tombol terakhir.
+- **Mode Windows & Mac:** Toggle khusus untuk mengubah label tombol modifier (Win/Cmd, Alt/Opt).
 
-### 2. Speed Typing Test
+### 2. ⚡ Advanced Speed Test (Typing Test)
 
-Ukur kecepatan mengetik (WPM) dan akurasi Anda dengan antarmuka yang distraksi-free.
+Uji kecepatan mengetik Anda dengan antarmuka yang bersih dan fokus.
 
-- Kalkulasi WPM (Words Per Minute) akurat.
-- Highlight visual untuk karakter benar/salah.
-- Animasi smooth dan responsif.
+- **Multi-Bahasa:** Pilihan kutipan dalam Bahasa Indonesia dan Inggris.
+- **Mode Custom:** Paste teks/artikel Anda sendiri untuk latihan mengetik yang lebih personal.
+- **Real-time Stats:** Tampilan WPM (Words Per Minute) dan Akurasi secara langsung.
+- **Premium UI:** Desain Glassmorphism dengan kartu statistik yang modern.
 
-### 3. LCD Pixel Perfect
+### 3. 🖥️ LCD Pixel Test
 
-Cek kesehatan monitor Anda dari dead pixel atau stuck pixel.
+Alat diagnosa sederhana untuk layar monitor.
 
-- Mode layar penuh (Full Screen).
-- Siklus warna lengkap (RGB, CMY, Black, White).
+- **Deteksi Dead Pixel:** Siklus warna solid (Merah, Hijau, Biru, Putih, Hitam) untuk menemukan piksel mati atau "stuck pixel".
+- **Full Screen Experience:** Mode layar penuh tanpa gangguan.
+
+### 4. 📱 Responsive & Mobile-Aware
+
+- **Desktop-First Design:** Dioptimalkan untuk penggunaan desktop.
+- **Mobile Guard:** Peringatan otomatis saat diakses melalui perangkat mobile (< 1024px) untuk memastikan pengalaman pengguna terbaik (karena keyboard fisik diperlukan).
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Core**: React 19, Vite
-- **Styling**: Modern Vanilla CSS (CSS Variables, Flexbox/Grid, Glassmorphism)
-- **Routing**: React Router DOM
-- **Icons**: Lucide React
+- **Frontend Framework:** [React](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** Pure CSS (Variables, Flexbox, Grid, Glassmorphism)
+- **Routing:** React Router DOM
+- **Icons:** Lucide React
 
-## 📦 Cara Install & Menjalankan
+## 🚀 Cara Menjalankan Project
 
-1.  **Clone repository ini**
+1.  **Clone repository ini:**
 
     ```bash
     git clone https://github.com/username/keyboard-test.git
     cd keyboard-test
     ```
 
-2.  **Install dependencies**
+2.  **Install dependencies:**
 
     ```bash
     npm install
     ```
 
-3.  **Jalankan server development**
+3.  **Jalankan development server:**
 
     ```bash
     npm run dev
     ```
 
-4.  Buka browser dan kunjungi `http://localhost:5173`.
+4.  Buka browser dan akses `http://localhost:5173`
 
-## 👨‍💻 Tentang Pembuat
+## 🎨 Screenshot
 
-Dibuat dengan ❤️ untuk komunitas developer Indonesia. Project ini menunjukkan implementasi bersih dari state management di React, penanganan DOM events untuk hardware input, dan praktik CSS modern tanpa framework CSS berat.
+_(Anda dapat menambahkan screenshot project di sini)_
 
 ---
 
-_Open Source Project - Silakan berkontribusi atau gunakan untuk belajar!_
+Dibuat dengan ❤️ untuk komunitas pecinta Keyboard Indonesia.
