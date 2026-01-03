@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem; /* Reduced gap */
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -19,10 +19,12 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+  /* Removed margin-bottom, let container gap handle it */
   flex-wrap: wrap;
   justify-content: center;
   transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 800px; /* Unify width */
 }
 
 .settings-panel:hover {
@@ -79,62 +81,64 @@
 
 /* Stats Cards */
 .stats-board {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  display: flex;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .stat-item {
   background: linear-gradient(145deg, #1a1a25, #13131f);
-  padding: 1.5rem;
-  border-radius: 16px;
+  padding: 1rem 2rem;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  min-width: 150px;
 }
 
 .stat-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   border-color: var(--accent-purple);
 }
 
 .stat-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .stat-value {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #fff;
-  background: linear-gradient(to right, #fff, var(--text-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1;
 }
 
 /* Text Display */
 .text-display {
-  font-size: 1.6rem;
-  line-height: 1.8;
+  font-size: 1.3rem;
+  line-height: 1.6;
   color: #555;
   background: #15151e;
-  padding: 3rem;
-  border-radius: 20px;
+  padding: 2rem;
+  border-radius: 16px;
   border: 1px solid var(--border-color);
   width: 100%;
-  min-height: 250px;
+  max-width: 800px;
+  min-height: 150px;
   cursor: text;
-  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace; /* More code-like font */
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
   position: relative;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
   white-space: pre-wrap;
   transition: border-color 0.3s ease;
 }
@@ -164,8 +168,23 @@
   background: var(--accent-cyan);
   color: #000;
   border-radius: 2px;
-  box-shadow: 0 0 15px var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
   font-weight: bold;
+}
+
+.char.current::after {
+  display: none;
+}
+
+.hidden-input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Custom Text Area */

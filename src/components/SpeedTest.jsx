@@ -68,7 +68,12 @@ const SpeedTest = () => {
       newText = customText.trim();
     } else {
       const texts = TEXT_DATA[lang];
-      newText = texts[Math.floor(Math.random() * texts.length)];
+      // Try to pick a new text different from current
+      let nextText = texts[Math.floor(Math.random() * texts.length)];
+      if (texts.length > 1 && nextText === text) {
+        nextText = texts[(texts.indexOf(nextText) + 1) % texts.length];
+      }
+      newText = nextText;
     }
 
     setText(newText);
@@ -230,15 +235,23 @@ const SpeedTest = () => {
         </>
       )}
 
-      <div className="controls">
+      <div className="speed-controls">
         {status !== "editing" && (
-          <button className="btn btn-primary refresh-btn" onClick={resetTest}>
+          <button
+            className="btn btn-primary refresh-btn"
+            onClick={resetTest}
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <RefreshCcw size={18} />{" "}
             {status === "finished" ? "Try Again" : "Restart"}
           </button>
         )}
         {mode === "custom" && status !== "editing" && (
-          <button className="btn" onClick={() => setStatus("editing")}>
+          <button
+            className="btn"
+            onClick={() => setStatus("editing")}
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <Edit3 size={18} style={{ marginRight: "0.5rem" }} /> Edit Text
           </button>
         )}
