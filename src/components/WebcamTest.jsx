@@ -26,6 +26,19 @@ const WebcamTest = () => {
     return () => stopCamera();
   }, []);
 
+  useEffect(() => {
+    if (isActive && videoRef.current && stream) {
+      videoRef.current.srcObject = stream;
+      videoRef.current.onloadedmetadata = () => {
+        setResolution({
+          w: videoRef.current.videoWidth,
+          h: videoRef.current.videoHeight,
+        });
+        videoRef.current.play().catch((e) => console.error("Play error:", e));
+      };
+    }
+  }, [isActive, stream]);
+
   const startCamera = async () => {
     try {
       setError(null);
@@ -41,7 +54,13 @@ const WebcamTest = () => {
       setIsActive(true);
     } catch (err) {
       console.error(err);
-      setError("Could not access webcam. Please check permissions.");
+      if (err.name === "NotReadableError" || err.name === "TrackStartError") {
+        setError(
+          "Camera is in use by another application. Please close other apps and try again."
+        );
+      } else {
+        setError("Could not access webcam. Please check permissions.");
+      }
       setIsActive(false);
     }
   };
