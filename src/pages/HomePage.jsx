@@ -1,86 +1,160 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Keyboard, Zap, Monitor } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import {
+  Keyboard,
+  Zap,
+  Monitor,
+  MousePointer2,
+  Gamepad2,
+  Target,
+  Headphones,
+  Layers,
+  Music,
+  Activity,
+} from "lucide-react";
+import "../styles/index.css";
+import "../styles/home.css";
 
 const HomePage = () => {
-  return (
-    <div style={{ textAlign: "center", padding: "4rem 0" }}>
-      <h1
-        style={{
-          fontSize: "3.5rem",
-          marginBottom: "1rem",
-          background:
-            "linear-gradient(to right, var(--accent-cyan), var(--accent-purple))",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        Test Your Gear
-      </h1>
-      <p
-        style={{
-          fontSize: "1.2rem",
-          color: "var(--text-secondary)",
-          marginBottom: "3rem",
-          maxWidth: "600px",
-          margin: "0 auto 3rem auto",
-        }}
-      >
-        The ultimate suite of tools to verify your keyboard functionality,
-        typing speed, and display quality.
-      </p>
+  const categories = [
+    {
+      title: "Core Input Tools",
+      description: "Test your primary peripherals.",
+      tools: [
+        {
+          path: "/keyboard",
+          label: "Keyboard Test",
+          icon: <Keyboard size={32} />,
+          desc: "104-Key, NKRO & Layout Check",
+        },
+        {
+          path: "/mouse",
+          label: "Mouse Tester",
+          icon: <MousePointer2 size={32} />,
+          desc: "Polling Rate & Double Click",
+          upcoming: true,
+        },
+        {
+          path: "/gamepad",
+          label: "Gamepad Tester",
+          icon: <Gamepad2 size={32} />,
+          desc: "Drift Check & Input Test",
+          upcoming: true,
+        },
+        {
+          path: "/keyboard",
+          label: "Anti-Ghosting",
+          icon: <Layers size={32} />,
+          desc: "N-Key Rollover Test",
+          upcoming: true,
+        },
+      ],
+    },
+    {
+      title: "Skill & Performance",
+      description: "Measure your reaction and speed.",
+      tools: [
+        {
+          path: "/speed",
+          label: "Speed Test",
+          icon: <Zap size={32} />,
+          desc: "WPM & Accuracy Typing",
+        },
+        {
+          path: "/aim",
+          label: "Aim Trainer",
+          icon: <Target size={32} />,
+          desc: "Reflex & Precision Game",
+          upcoming: true,
+        },
+        {
+          path: "/shortcuts",
+          label: "Shortcut Master",
+          icon: <Keyboard size={32} />,
+          desc: "Learn VS Code Shortcuts",
+          upcoming: true,
+        },
+      ],
+    },
+    {
+      title: "Display & Audio",
+      description: "Diagnostics for screen and sound.",
+      tools: [
+        {
+          path: "/lcd",
+          label: "LCD Pixel Test",
+          icon: <Monitor size={32} />,
+          desc: "Dead Pixel Check",
+        },
+        {
+          path: "/hz",
+          label: "Refresh Rate",
+          icon: <Activity size={32} />,
+          desc: "Real Hz/FPS Monitor",
+          upcoming: true,
+        },
+        {
+          path: "/audio",
+          label: "Stereo Test",
+          icon: <Headphones size={32} />,
+          desc: "L/R Channel Check",
+          upcoming: true,
+        },
+      ],
+    },
+    {
+      title: "Experimental",
+      description: "Fun additions.",
+      tools: [
+        {
+          path: "/",
+          label: "Switch Sounds",
+          icon: <Music size={32} />,
+          desc: "Mech Keyboard Simulator",
+          upcoming: true,
+        },
+      ],
+    },
+  ];
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "2rem",
-        }}
-      >
-        <FeatureCard
-          to="/keyboard"
-          icon={<Keyboard size={48} color="var(--accent-cyan)" />}
-          title="Keyboard Test"
-          description="Check every key on your keyboard. Supports Windows and Mac layouts."
-        />
-        <FeatureCard
-          to="/speed"
-          icon={<Zap size={48} color="var(--accent-purple)" />}
-          title="Speed Test"
-          description="Test your typing speed (WPM) and accuracy with our sleek typing tool."
-        />
-        <FeatureCard
-          to="/lcd"
-          icon={<Monitor size={48} color="var(--accent-green)" />}
-          title="LCD Pixel Test"
-          description="Check for dead pixels and screen uniformity with full-screen color cycles."
-        />
+  return (
+    <div className="container">
+      <div className="hero">
+        <h1>
+          Ultimate <span className="text-gradient">Peripheral</span> Suite
+        </h1>
+        <p className="subtitle">Diagnose, Test, and Improve your setup.</p>
+      </div>
+
+      <div className="tools-grid-wrapper">
+        {categories.map((cat, index) => (
+          <div key={index} className="category-section">
+            <h2 className="category-title">{cat.title}</h2>
+            <p className="category-desc">{cat.description}</p>
+            <div className="tools-grid">
+              {cat.tools.map((tool, tIndex) => (
+                <NavLink
+                  key={tIndex}
+                  to={tool.upcoming ? "#" : tool.path}
+                  className={`card tool-card ${
+                    tool.upcoming ? "upcoming" : ""
+                  }`}
+                  onClick={(e) => tool.upcoming && e.preventDefault()}
+                >
+                  <div className="card-icon">{tool.icon}</div>
+                  <h3>{tool.label}</h3>
+                  <p>{tool.desc}</p>
+                  {tool.upcoming && (
+                    <span className="badge-upcoming">Soon</span>
+                  )}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
-
-const FeatureCard = ({ to, icon, title, description }) => (
-  <Link
-    to={to}
-    style={{
-      background: "var(--bg-panel)",
-      padding: "2rem",
-      borderRadius: "12px",
-      border: "1px solid var(--border-color)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "1rem",
-      transition: "transform 0.2s",
-    }}
-    onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-5px)")}
-    onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-  >
-    {icon}
-    <h3 style={{ fontSize: "1.5rem" }}>{title}</h3>
-    <p style={{ color: "var(--text-secondary)" }}>{description}</p>
-  </Link>
-);
 
 export default HomePage;
