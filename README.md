@@ -1,58 +1,45 @@
-# ⌨️ Modern Keyboard & Peripheral Tester
+# 🌌 IOVerse (formerly Keyboard Test)
 
-![Project Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
-![Tech Stack](https://img.shields.io/badge/Tech-React%20%7C%20Vite%20%7C%20CSS-blue?style=flat-square)
+![Version](https://img.shields.io/badge/Version-1.0.0-cyan?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Stable-success?style=flat-square)
+![Stack](https://img.shields.io/badge/Tech-React_19_|_Vite_|_Lucide-blue?style=flat-square)
 
-**Kumpulan alat pengujian periferal modern, estetis, dan responsif yang dibangun dengan React.**
+**The Ultimate Peripheral Testing Suite.**
+_Input/Output Universe_ - Diagnose, benchmark, and verify all your computing gear in one premium, aesthetic interface.
 
-Project ini dirancang untuk memberikan pengalaman pengujian yang premium dan akurat bagi pengguna keyboard mekanik, penggemar mengetik, dan teknisi komputer.
+## ✨ Features (v1.0)
 
-## ✨ Fitur Unggulan
+### ⌨️ Input Tools
 
-### 1. 🎹 Full 104-Key Keyboard Tester
+- **104-Key Tester:** Full visual keyboard with History, NKRO, and Anti-Ghosting support.
+- **Mouse Tester:** Check Polling Rate (Hz), Click reliability, and Double-click detection.
+- **Gamepad Tester:** Visualize controller inputs, analog drift, and vibration.
+- **Microphone**: Real-time waveform visualizer for audio input.
+- **Webcam**: Check resolution, mirroring, and video feed availability.
 
-Visualisasi keyboard lengkap dengan dukungan layout standar 104 tombol.
+### 🖥️ Output Audio & Video
 
-- **Auto-scaling:** Tampilan otomatis menyesuaikan dengan lebar layar Anda—tidak ada scrollbar horizontal.
-- **Layout Lengkap:** Termasuk Numpad, Arrow Keys, dan Navigation Cluster (Insert, Home, End, dll).
-- **Indikator Visual:** Efek "glow" saat tombol ditekan dan riwayat penekanan tombol terakhir.
-- **Mode Windows & Mac:** Toggle khusus untuk mengubah label tombol modifier (Win/Cmd, Alt/Opt).
+- **Refresh Rate (Hz):** Real-time FPS monitor with Motion Clarity UFO test.
+- **Stereo Audio:** Left / Right channel separation and panning test.
+- **Dead Pixel Check:** Full-screen solid color cycler to spot panel defects.
 
-### 2. ⚡ Advanced Speed Test (Typing Test)
+### ⚡ Skills & Benchmarks
 
-Uji kecepatan mengetik Anda dengan antarmuka yang bersih dan fokus.
+- **Typing Speed Test:** Classic WPM and Accuracy benchmark with result tracking.
+- **Aim Trainer:** Reflex reaction game to warm up your mouse hand.
+- **Shortcut Master:** Practice essential hotkeys for VS Code and Windows.
 
-- **Multi-Bahasa:** Pilihan kutipan dalam Bahasa Indonesia dan Inggris.
-- **Mode Custom:** Paste teks/artikel Anda sendiri untuk latihan mengetik yang lebih personal.
-- **Real-time Stats:** Tampilan WPM (Words Per Minute) dan Akurasi secara langsung.
-- **Premium UI:** Desain Glassmorphism dengan kartu statistik yang modern.
+### 🛠️ Utilities
 
-### 3. 🖥️ LCD Pixel Test
+- **Battery Monitor:** Diagnostic tool for power level, charging status, and rate.
+- **Mechanical Sound Sim:** Turn your membrane keyboard into a thocky beast while typing.
 
-Alat diagnosa sederhana untuk layar monitor.
+## 🚀 Getting Started
 
-- **Deteksi Dead Pixel:** Siklus warna solid (Merah, Hijau, Biru, Putih, Hitam) untuk menemukan piksel mati atau "stuck pixel".
-- **Full Screen Experience:** Mode layar penuh tanpa gangguan.
-
-### 4. 📱 Responsive & Mobile-Aware
-
-- **Desktop-First Design:** Dioptimalkan untuk penggunaan desktop.
-- **Mobile Guard:** Peringatan otomatis saat diakses melalui perangkat mobile (< 1024px) untuk memastikan pengalaman pengguna terbaik (karena keyboard fisik diperlukan).
-
-## 🛠️ Teknologi yang Digunakan
-
-- **Frontend Framework:** [React](https://react.dev/)
-- **Build Tool:** [Vite](https://vitejs.dev/)
-- **Styling:** Pure CSS (Variables, Flexbox, Grid, Glassmorphism)
-- **Routing:** React Router DOM
-- **Icons:** Lucide React
-
-## 🚀 Cara Menjalankan Project
-
-1.  **Clone repository ini:**
+1.  **Clone the repo:**
 
     ```bash
-    git clone https://github.com/username/keyboard-test.git
+    git clone https://github.com/hndko/IOVerse-react19.git
     cd keyboard-test
     ```
 
@@ -62,18 +49,17 @@ Alat diagnosa sederhana untuk layar monitor.
     npm install
     ```
 
-3.  **Jalankan development server:**
-
+3.  **Run locally:**
     ```bash
     npm run dev
     ```
 
-4.  Buka browser dan akses `http://localhost:5173`
+## 📦 Releases
 
-## 🎨 Screenshot
+Releases are managed via Git Tags.
 
-_(Anda dapat menambahkan screenshot project di sini)_
+- **v1.0.0**: Initial Release with Batches 1-5 completed.
 
 ---
 
-Dibuat dengan ❤️ untuk komunitas pecinta Keyboard Indonesia.
+_Created by Kyoo & Antigravity Agent_
