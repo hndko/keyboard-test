@@ -252,7 +252,16 @@
   gap: 0.8rem;
 }
 
-.control-item label {
+.control-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.control-item label,
+.control-row label {
   display: flex;
   justify-content: space-between;
   color: var(--text-secondary);
@@ -265,6 +274,7 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 4px;
   border-radius: 10px;
+  min-width: 200px;
 }
 
 .btn-group .btn {

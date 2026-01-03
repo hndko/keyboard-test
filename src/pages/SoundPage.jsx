@@ -58,7 +58,7 @@ const SoundPage = () => {
               />
             </div>
 
-            <div className="control-item">
+            <div className="control-row">
               <label>Profile</label>
               <div className="btn-group">
                 <button
