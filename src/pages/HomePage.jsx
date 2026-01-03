@@ -38,7 +38,6 @@ const HomePage = () => {
           label: "Gamepad Tester",
           icon: <Gamepad2 size={32} />,
           desc: "Drift Check & Input Test",
-          upcoming: true,
         },
         {
           path: "/keyboard",

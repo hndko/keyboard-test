@@ -6,21 +6,21 @@ import KeyboardPage from "./pages/KeyboardPage";
 import SpeedPage from "./pages/SpeedPage";
 import LcdPage from "./pages/LcdPage";
 import MousePage from "./pages/MousePage";
+import GamepadPage from "./pages/GamepadPage";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="container" style={{ marginTop: "2rem" }}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/keyboard" element={<KeyboardPage />} />
-          <Route path="/speed" element={<SpeedPage />} />
-          <Route path="/lcd" element={<LcdPage />} />
-          <Route path="/mouse" element={<MousePage />} />
-        </Routes>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/keyboard" element={<KeyboardPage />} />
+        <Route path="/speed" element={<SpeedPage />} />
+        <Route path="/lcd" element={<LcdPage />} />
+        <Route path="/mouse" element={<MousePage />} />
+        <Route path="/gamepad" element={<GamepadPage />} />
+      </Routes>
+    </>
   );
 }
 
