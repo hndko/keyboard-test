@@ -16,6 +16,9 @@ import {
   Activity,
   Maximize,
   Battery,
+  Smartphone,
+  Fingerprint,
+  Vibrate,
 } from "lucide-react";
 import "../styles/index.css";
 import "../styles/home.css";

@@ -1,6 +1,6 @@
 # 🌌 IOVerse (formerly Keyboard Test)
 
-![Version](https://img.shields.io/badge/Version-1.0.0-cyan?style=flat-square)
+![Version](https://img.shields.io/badge/Version-1.1.0-cyan?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Stable-success?style=flat-square)
 ![Stack](https://img.shields.io/badge/Tech-React_19_|_Vite_|_Lucide-blue?style=flat-square)
 
