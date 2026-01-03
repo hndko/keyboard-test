@@ -23,6 +23,9 @@ import VibrationPage from "./pages/VibrationPage";
 import MotionPage from "./pages/MotionPage";
 import LocationPage from "./pages/LocationPage";
 import NetworkPage from "./pages/NetworkPage";
+import ColorPage from "./pages/ColorPage";
+import StoragePage from "./pages/StoragePage";
+import TtsPage from "./pages/TtsPage";
 import { SoundProvider } from "./context/SoundContext";
 
 function App() {
@@ -52,6 +55,9 @@ function App() {
         <Route path="/motion" element={<MotionPage />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/network" element={<NetworkPage />} />
+        <Route path="/color" element={<ColorPage />} />
+        <Route path="/storage" element={<StoragePage />} />
+        <Route path="/tts" element={<TtsPage />} />
       </Routes>
     </SoundProvider>
   );

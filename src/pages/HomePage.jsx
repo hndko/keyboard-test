@@ -23,6 +23,9 @@ import {
   Compass,
   MapPin,
   Wifi,
+  Palette,
+  Database,
+  Volume2,
 } from "lucide-react";
 import "../styles/index.css";
 import "../styles/home.css";
@@ -142,6 +145,12 @@ const HomePage = () => {
           desc: "Screen Color Cycler",
         },
         {
+          path: "/color",
+          label: "Color Guard",
+          icon: <Palette size={32} />,
+          desc: "Gradient Banding Test",
+        },
+        {
           path: "/typing",
           label: "Typing Speed",
           icon: <Keyboard size={32} />,
@@ -152,6 +161,18 @@ const HomePage = () => {
           label: "Battery Info",
           icon: <Battery size={32} />,
           desc: "Power & Charging Status",
+        },
+        {
+          path: "/storage",
+          label: "Storage",
+          icon: <Database size={32} />,
+          desc: "Quota Usage",
+        },
+        {
+          path: "/tts",
+          label: "Text to Speech",
+          icon: <Volume2 size={32} />,
+          desc: "Voice Synthesis",
         },
       ],
     },

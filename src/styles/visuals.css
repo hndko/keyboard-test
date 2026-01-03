@@ -1,0 +1,287 @@
+/* Visuals & System CSS */
+
+/* Color Guard */
+.visual-tool-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.visual-tool-container.fs-mode {
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+}
+
+.visual-controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+}
+
+.mode-toggle {
+  display: flex;
+  background: var(--bg-card);
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+}
+.btn-sm {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  color: #888;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-sm.active {
+  background: var(--bg-surface);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.visual-canvas {
+  width: 100%;
+  max-width: 1000px;
+  height: 60vh;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fs-mode .visual-canvas {
+  height: 100vh;
+  width: 100vw;
+  max-width: none;
+  border-radius: 0;
+}
+
+.gradient-suite {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gradient-bar {
+  flex: 1;
+  width: 100%;
+}
+.gradient-bar.r-g-b {
+  background: linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+}
+.gradient-bar.b-w {
+  background: linear-gradient(to right, #000000, #ffffff);
+}
+.gradient-bar.complex {
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+}
+
+.scale-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.scale-step {
+  flex: 1;
+  height: 100%;
+}
+
+.rgb-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fs-overlay-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.fs-overlay-btn:hover {
+  opacity: 1;
+}
+
+.visual-desc {
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Storage */
+.storage-container {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.storage-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.storage-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.storage-visual {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.pie-chart-mock {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent-cyan) 0deg,
+    var(--accent-cyan) var(--p, 0deg),
+    #222 var(--p, 0deg)
+  );
+  /* This needs dynamic update, but here we use css variable logic or simple full circle bg */
+  background: #222; /* Fallback for mock */
+  border: 15px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pie-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pie-val {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.pie-label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.storage-stats {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 0;
+}
+.stat-row:last-child {
+  border: none;
+}
+.note {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+/* TTS */
+.tts-container {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.tts-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+.tts-card.active-speech {
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+  border-color: var(--accent-cyan);
+}
+.tts-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.pulse-icon {
+  animation: pulse 1s infinite;
+  color: var(--accent-cyan);
+}
+
+.tts-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fff;
+  resize: none;
+  font-size: 1.1rem;
+}
+.tts-input:focus {
+  outline: 1px solid var(--accent-cyan);
+}
+
+.tts-controls-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tts-select {
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+.tts-actions {
+  display: flex;
+  gap: 1rem;
+}
+.tts-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
