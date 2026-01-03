@@ -15,6 +15,9 @@ import ShortcutPage from "./pages/ShortcutPage";
 import SoundPage from "./pages/SoundPage";
 import MicrophonePage from "./pages/MicrophonePage";
 import WebcamPage from "./pages/WebcamPage";
+import DeadPixelPage from "./pages/DeadPixelPage";
+import TypingPage from "./pages/TypingPage";
+import BatteryPage from "./pages/BatteryPage";
 import { SoundProvider } from "./context/SoundContext";
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
         <Route path="/sound" element={<SoundPage />} />
         <Route path="/mic" element={<MicrophonePage />} />
         <Route path="/webcam" element={<WebcamPage />} />
+        <Route path="/deadpixel" element={<DeadPixelPage />} />
+        <Route path="/typing" element={<TypingPage />} />
+        <Route path="/battery" element={<BatteryPage />} />
       </Routes>
     </SoundProvider>
   );

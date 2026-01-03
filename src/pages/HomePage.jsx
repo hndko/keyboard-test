@@ -14,6 +14,8 @@ import {
   Camera,
   Music,
   Activity,
+  Maximize,
+  Battery,
 } from "lucide-react";
 import "../styles/index.css";
 import "../styles/home.css";
