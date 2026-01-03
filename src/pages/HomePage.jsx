@@ -131,6 +131,72 @@ const HomePage = () => {
         },
       ],
     },
+    {
+      title: "Utilities",
+      description: "Useful tools for diagnosis.",
+      tools: [
+        {
+          path: "/deadpixel",
+          label: "Dead Pixel",
+          icon: <Maximize size={32} />,
+          desc: "Screen Color Cycler",
+        },
+        {
+          path: "/typing",
+          label: "Typing Speed",
+          icon: <Keyboard size={32} />,
+          desc: "WPM and Accuracy",
+        },
+        {
+          path: "/battery",
+          label: "Battery Info",
+          icon: <Battery size={32} />,
+          desc: "Power & Charging Status",
+        },
+      ],
+    },
+    {
+      title: "Mobile Tools",
+      description: "Touch and Haptics testing.",
+      tools: [
+        {
+          path: "/touch",
+          label: "Touch Screen",
+          icon: <Fingerprint size={32} />,
+          desc: "Multi-Touch Visualizer",
+        },
+        {
+          path: "/vibration",
+          label: "Vibration",
+          icon: <Vibrate size={32} />,
+          desc: "Haptic Feedback Test",
+        },
+      ],
+    },
+    {
+      title: "Sensors & Network",
+      description: "Environment and connectivity.",
+      tools: [
+        {
+          path: "/motion",
+          label: "Motion",
+          icon: <Radar size={32} />,
+          desc: "Gyro & Accel Visualizer",
+        },
+        {
+          path: "/location",
+          label: "GPS Location",
+          icon: <MapPin size={32} />,
+          desc: "Coordinates & Altitude",
+        },
+        {
+          path: "/network",
+          label: "Network",
+          icon: <Wifi size={32} />,
+          desc: "Speed & Latency",
+        },
+      ],
+    },
   ];
 
   return (

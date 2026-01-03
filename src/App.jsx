@@ -18,6 +18,11 @@ import WebcamPage from "./pages/WebcamPage";
 import DeadPixelPage from "./pages/DeadPixelPage";
 import TypingPage from "./pages/TypingPage";
 import BatteryPage from "./pages/BatteryPage";
+import TouchPage from "./pages/TouchPage";
+import VibrationPage from "./pages/VibrationPage";
+import MotionPage from "./pages/MotionPage";
+import LocationPage from "./pages/LocationPage";
+import NetworkPage from "./pages/NetworkPage";
 import { SoundProvider } from "./context/SoundContext";
 
 function App() {
@@ -42,6 +47,11 @@ function App() {
         <Route path="/deadpixel" element={<DeadPixelPage />} />
         <Route path="/typing" element={<TypingPage />} />
         <Route path="/battery" element={<BatteryPage />} />
+        <Route path="/touch" element={<TouchPage />} />
+        <Route path="/vibration" element={<VibrationPage />} />
+        <Route path="/motion" element={<MotionPage />} />
+        <Route path="/location" element={<LocationPage />} />
+        <Route path="/network" element={<NetworkPage />} />
       </Routes>
     </SoundProvider>
   );
