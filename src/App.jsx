@@ -13,6 +13,8 @@ import AudioPage from "./pages/AudioPage";
 import AimPage from "./pages/AimPage";
 import ShortcutPage from "./pages/ShortcutPage";
 import SoundPage from "./pages/SoundPage";
+import MicrophonePage from "./pages/MicrophonePage";
+import WebcamPage from "./pages/WebcamPage";
 import { SoundProvider } from "./context/SoundContext";
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path="/aim" element={<AimPage />} />
         <Route path="/shortcuts" element={<ShortcutPage />} />
         <Route path="/sound" element={<SoundPage />} />
+        <Route path="/mic" element={<MicrophonePage />} />
+        <Route path="/webcam" element={<WebcamPage />} />
       </Routes>
     </SoundProvider>
   );

@@ -9,6 +9,9 @@ import {
   Target,
   Headphones,
   Layers,
+  Search,
+  Mic,
+  Camera,
   Music,
   Activity,
 } from "lucide-react";
@@ -92,6 +95,18 @@ const HomePage = () => {
           label: "Stereo Test",
           icon: <Headphones size={32} />,
           desc: "L/R Channel Check",
+        },
+        {
+          path: "/mic",
+          label: "Microphone",
+          icon: <Mic size={32} />,
+          desc: "Waveform Input Test",
+        },
+        {
+          path: "/webcam",
+          label: "Webcam",
+          icon: <Camera size={32} />,
+          desc: "Video Feed & Resolution",
         },
       ],
     },

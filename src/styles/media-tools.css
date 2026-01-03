@@ -1,0 +1,162 @@
+/* Media Tools (Mic & Webcam) */
+
+/* Microphone */
+.mic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.mic-controls {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  background: var(--bg-panel);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.device-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.device-select label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.device-select select {
+  background: #111;
+  color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 0.8rem;
+  border-radius: 8px;
+  min-width: 250px;
+  outline: none;
+}
+.device-select select:focus {
+  border-color: var(--accent-cyan);
+}
+
+.mic-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  min-width: 140px;
+  justify-content: center;
+}
+.mic-btn:hover {
+  background: rgba(0, 243, 255, 0.1);
+}
+.mic-btn.active {
+  background: var(--accent-cyan);
+  color: #000;
+}
+
+.visualizer-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  background: #0f0f12;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.waveform-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.mic-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.mic-icon-lg {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #ff4444;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Webcam */
+.webcam-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webcam-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1); /* Mirror by default */
+}
+.webcam-feed.no-mirror {
+  transform: scaleX(1);
+}
+
+.video-placeholder {
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cam-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cam-info {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+}
