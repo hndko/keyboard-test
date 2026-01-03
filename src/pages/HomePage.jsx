@@ -113,9 +113,9 @@ const HomePage = () => {
     <div className="container">
       <div className="hero">
         <h1>
-          Ultimate <span className="text-gradient">Peripheral</span> Suite
+          Welcome to <span className="text-gradient">IOVerse</span>
         </h1>
-        <p className="subtitle">Diagnose, Test, and Improve your setup.</p>
+        <p className="subtitle">The Ultimate Utility Suite for your Gear.</p>
       </div>
 
       <div className="tools-grid-wrapper">

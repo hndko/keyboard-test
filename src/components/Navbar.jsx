@@ -9,7 +9,7 @@ const Navbar = () => {
       <NavLink to="/" className="nav-brand">
         <Keyboard />
         <span>
-          KeyTest<span style={{ color: "#fff" }}>.io</span>
+          IO<span style={{ color: "var(--accent-cyan)" }}>Verse</span>
         </span>
       </NavLink>
 
