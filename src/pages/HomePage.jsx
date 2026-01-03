@@ -19,6 +19,10 @@ import {
   Smartphone,
   Fingerprint,
   Vibrate,
+  Radar,
+  Compass,
+  MapPin,
+  Wifi,
 } from "lucide-react";
 import "../styles/index.css";
 import "../styles/home.css";
