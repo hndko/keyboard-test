@@ -8,6 +8,8 @@ import LcdPage from "./pages/LcdPage";
 import MousePage from "./pages/MousePage";
 import GamepadPage from "./pages/GamepadPage";
 import GhostingPage from "./pages/GhostingPage";
+import HzPage from "./pages/HzPage";
+import AudioPage from "./pages/AudioPage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/mouse" element={<MousePage />} />
         <Route path="/gamepad" element={<GamepadPage />} />
         <Route path="/ghosting" element={<GhostingPage />} />
+        <Route path="/hz" element={<HzPage />} />
+        <Route path="/audio" element={<AudioPage />} />
       </Routes>
     </>
   );
