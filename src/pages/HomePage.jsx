@@ -62,14 +62,12 @@ const HomePage = () => {
           label: "Aim Trainer",
           icon: <Target size={32} />,
           desc: "Reflex & Precision Game",
-          upcoming: true,
         },
         {
           path: "/shortcuts",
           label: "Shortcut Master",
           icon: <Keyboard size={32} />,
           desc: "Learn VS Code Shortcuts",
-          upcoming: true,
         },
       ],
     },
@@ -102,11 +100,10 @@ const HomePage = () => {
       description: "Fun additions.",
       tools: [
         {
-          path: "/",
+          path: "/sound",
           label: "Switch Sounds",
           icon: <Music size={32} />,
           desc: "Mech Keyboard Simulator",
-          upcoming: true,
         },
       ],
     },

@@ -10,10 +10,14 @@ import GamepadPage from "./pages/GamepadPage";
 import GhostingPage from "./pages/GhostingPage";
 import HzPage from "./pages/HzPage";
 import AudioPage from "./pages/AudioPage";
+import AimPage from "./pages/AimPage";
+import ShortcutPage from "./pages/ShortcutPage";
+import SoundPage from "./pages/SoundPage";
+import { SoundProvider } from "./context/SoundContext";
 
 function App() {
   return (
-    <>
+    <SoundProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -25,8 +29,11 @@ function App() {
         <Route path="/ghosting" element={<GhostingPage />} />
         <Route path="/hz" element={<HzPage />} />
         <Route path="/audio" element={<AudioPage />} />
+        <Route path="/aim" element={<AimPage />} />
+        <Route path="/shortcuts" element={<ShortcutPage />} />
+        <Route path="/sound" element={<SoundPage />} />
       </Routes>
-    </>
+    </SoundProvider>
   );
 }
 
